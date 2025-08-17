@@ -20,22 +20,22 @@ class EventNormalizedProcessor(BaseNormalizedProcessor):
             product_master = self.read_master_data("product_master.csv")
             indication_master = self.read_master_data("indication_master.csv")
             
-            # Step 1: Explode comma-separated brands
-            logger.info("Processing comma-separated brands")
+            # Step 1: Explode the event_brand column
+            logger.info("Splitting and exploding event_brand column")
             events_df = events_df.withColumn(
-                "event_brand",
-                explode(split(col("event_brand"), ","))
+                "event_brand_single",
+                explode(split(col("event_brand"), "\\|"))
             ).withColumn("event_brand", trim(col("event_brand")))
             
-            # Step 2: Join with product master to get brand information
-            logger.info("Joining with product master")
+            # Step 2: Join with product master on the single brand
+            logger.info("Joining with product master on single brand")
             events_with_brand = events_df.join(
                 product_master.select(
-                    col("source_product_name").alias("event_brand"),
+                    col("source_product_name").alias("event_brand_single"),
                     col("brand_id"),
                     col("brand_name")
                 ),
-                on="event_brand",
+                on="event_brand_single",
                 how="left"
             )
             
@@ -51,9 +51,20 @@ class EventNormalizedProcessor(BaseNormalizedProcessor):
                 .otherwise(col("brand_name"))
             )
             
-            # Step 4: Join with indication master
+            # Step 4: Aggregate the results back together
+            logger.info("Aggregating brand information back into delimited strings")
+            # Group by all original columns except the ones we are aggregating
+            grouping_cols = [c for c in events_df.columns if c != 'event_brand_single']
+
+            events_aggregated = events_with_brand.groupBy(*grouping_cols).agg(
+                concat_ws("|", collect_list(col("brand_id"))).alias("brand_id"),
+                concat_ws("|", collect_list(col("brand_name"))).alias("brand_name"),
+                concat_ws("|", collect_list(col("event_brand_single"))).alias("event_brand_merged")
+            )
+
+            # Step 5: Join with indication master
             logger.info("Joining with indication master")
-            final_events = events_with_brand.join(
+            final_events = events_aggregated.join(
                 indication_master.select(
                     col("source_indication_name").alias("indication_name"),
                     col("indication_id")
@@ -64,6 +75,23 @@ class EventNormalizedProcessor(BaseNormalizedProcessor):
             
             # Select and order columns for final output
             logger.info("Preparing final events output")
+            final_events = final_events.select(
+                "event_id",
+                "event_name",
+                "event_date",
+                "event_type",
+                "event_vendor_id",
+                col("event_brand_merged").alias("event_brand"),
+                "brand_id",
+                "brand_name",
+                "indication_name",
+                "indication_id",
+                "source_system",
+                "source_file_name",
+                "source_file_date",
+                "oasis_modified_date"
+            ).distinct()
+            
             output_columns = [
                 "event_id", "event_name", "event_date", "event_brand",
                 "brand_id", "brand_name", "indication_name", "indication_id",
