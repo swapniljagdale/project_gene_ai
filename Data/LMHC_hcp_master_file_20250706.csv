@@ -1,0 +1,6 @@
+hcp_id,hcp_first_name,hcp_last_name,hcp_suffix,hcp_degree,hcp_npi,hcp_license_number,hcp_license_state,hcp_license_type,hcp_primary_specialty,hcp_secondary_specialty,hcp_tertiary_specialty,hcp_primary_address_id,source_updated_date,oasis_load_date
+1001,John,Smith,MD,MD,1234567890,MD12345,CA,Medical Doctor,Oncology,Hematology,,A1001,2025-07-05,2025-07-06
+1002,Sarah,Johnson,MD,MD,2345678901,MD23456,NY,Medical Doctor,Neurology,Multiple Sclerosis,,A1002,2025-07-05,2025-07-06
+1003,Michael,Brown,DO,DO,3456789012,DO34567,IL,Doctor of Osteopathic Medicine,Cardiology,Heart Failure,,A1003,2025-07-05,2025-07-06
+1004,Emily,Davis,MD,MD,4567890123,MD45678,TX,Medical Doctor,Oncology,Immunotherapy,,A1004,2025-07-05,2025-07-06
+1005,Robert,Wilson,MD,MD,5678901234,MD56789,FL,Medical Doctor,Neurology,Alzheimer's,,A1005,2025-07-05,2025-07-06

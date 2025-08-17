@@ -1,0 +1,325 @@
+,speaker_bureau_events_daily,,
+File Name,Attribute Name,Data Type,Description
+LMHC_EVENT_<Timestamp>.csv,event_vendor_id,string,Unique ID assigned to the event by the vendor system.
+,attribute_identifier,string,Identifies the element/component of the event the attribute belongs to.
+,bureau_id,string,"ID of the Bureau the event belongs to.
+SBS provides the Vendors with the bureau names and IDs for all the bureaus they will be providing logistics services for."
+,bureau_name,string,"Name of the Bureau the event belongs to.
+SBS provides the Vendors with the bureau names and IDs for all the bureaus they will be providing logistics services for."
+,is_child_event,string,"This identifies if the event is a child event or not. 
+Child (also known as Spoke) event is a smaller event that takes place in conjunction with another program which is the primary event (usually know as Parent/Hub) and where the speaker is."
+,parent_event_vendor_id,string,"ID of the parent event, if the event is a child."
+,event_start_date,date,Date the event is scheduled to take place.
+,event_arrival_time,string,Time when the customers are expected to arrive at the event. This is not the same as the Event Start Time and is usually earlier.
+,event_start_time,string,Time when program is scheduled to start.
+,time_zone,string,Time zone local to the event.
+,event_end_date,date,Date the event is scheduled to end.
+,event_status,string,"Defines the status of the event. Possible statuses for an event: 
+
+- Pending: Event has been requested in the vendor system and all key attributes (date and time, speaker and venue) may not be confirmed yet.
+
+- Confirmed: All key attributes of the event have been arranged and confirmed.
+
+- Occurred: The event has been confirmed by the accountable/host to have taken place.
+
+- Closed: The event took place and all known financial reconciliations for the event has been completed by the vendor.
+
+- Dropped: The event that is no longer taking place, and there is NO spend associated with the event.
+
+- Canceled: The event that is no longer taking place, but there is spend associated with it.
+
+- Canceled Closed: The event that is no longer taking place, there is spend associated with it and all known financial reconciliations for the event has been completed by the vendor.
+
+- On Hold: An event where vendor work has been paused by the requestor."
+,event_status_date_time,string,Date the event status was applied.
+,times_rescheduled,string,Number of times the event has been rescheduled.
+,event_type,string,"Defines the type of event being executed. Possible event types: 
+
+- Program: Standard speaker program event where HCPs, practice managers, patients, and other experts educate their peers about Genentech products, disease state information, and managed care topics.
+
+- Product Theater: Speaker programs held in conjunction with and on the same premises of conventions/congresses. 
+
+- GPO: Speaker programs where a Group Purchasing Organization (GPO) is involved in the placing of the program and in the recruitment of attendees.
+
+- National Broadcast: An event planned by Marketing, most often (but not exclusively) for a new product or indication launch, where advertising, recruitment, and attendance is nationwide. 
+
+- Training: - Events for training contracted speakers (HCPs, practice managers and patient ambassadors) on content and compliance before they can present at events.
+"
+,event_sub_type,string,"Defines whether the event is directed to HCPs or to patients/caregivers. Possible event sub types:
+
+- HCP: Event directed at HCPs. 
+
+- Patient: Event directed at patients, caregivers, and/or direct family members of Patients. 
+
+- Training: Events for training contracted speakers (HCPs, practice managers and patient ambassadors) on content and compliance before they can present at events."
+,event_format,string,"Defines how the program content is delivered to the attendees. Possible event formats: 
+
+- In-Person: A program where everybody is physically present in one location.
+
+- Hybrid: A program where some people are physically present in one location and some are attending virtually.
+
+- Virtual: A program where everybody is participating virtually.
+
+- Abbreviated Hybrid: A program with abbreviated content where some people are physically present in an in-office location and some are attending virtually. Abbreviated programs in an out-of-office location is only permitted for Product Theaters.
+
+- Abbreviated Virtual: A program with abbreviated content where everybody is participating virtually.
+
+- Child: A physical site that is an add-on to a program where some people are physically present, and some are participating virtually.
+
+- Broadcast to Multi-site: A program broadcasted to multiple locations (Child sites) where some people may be physically present, and some may be participating virtually.
+
+- Abbreviated Multi-site: Program with abbreviated content broadcasted to multiple in-office locations where some people may be physically present, and some may be participating virtually.
+
+- In-Person Multi-site: A program broadcasted from one physical location to other physical locations via closed circuit and there is no virtual participation. For example, a program being broadcast among a chain of restaurants or hospitals.
+"
+,meal_type,string,"Defines the type of meal provided at the event.
+Possible meal types:
+- Breakfast
+- Lunch
+- Dinner
+- Light Refreshment
+- No Meal Provided"
+,conference,string,Name of the convention/congress/conference in conjuction of which the Product Theater is held.
+,gpo,string,Name of the Group Purchasing Organization (GPO) involved in the placing of the event and its recruitment.
+,co_promote,string,Name of the company co-promoting the product with Genentech.
+,event_ecosystem,string,Ecosystem to which the event belongs to.
+,event_total_cost,string,"The total cost of the event.
+
+"
+,planned_customers,int,Number of customers the program host/accountable expects to attend the event.
+,total_attendees,int,"Total number of all attendees (regardless of participation role) that attended the event. This includes HCPs, patients (where applicable), speakers, employees, partners, vendors."
+,speakers_attended,int,Total number of speakers that presented at the event.
+,employees_and_partners_attended,int,Total number of Genentech employees and Partners that attended the event.
+,vendors_attended,int,Total number of vendor employees that attended the event.
+,customers_attended,int,Total number of HCP customers that attended the event.
+,patients_attended,int,"Total number of patients, caregivers and their guests that attended the event."
+,customers_rsvp,int,"Total number of customers that confirmed their attendance for the event, i.e. customer with RSVP = Yes(In-Person/Virtual)."
+,patients_rsvp,int,"Total number of patients, caregivers and their guests confirmed registrations (RSVP status = Yes) to attend the event."
+,customers_invited_email,int,Total number of HCP customers that were emailed the event invitation via the vendor system.
+,patients_invited_email,int,Total number of patients/caregivers that were emailed the event invitation via the vendor system.
+,event_created_by,string,Name of the person who created the event in the vendor system.
+,event_created_date_time,string,Date and time the event was created in the vendor system.
+,event_last_updated_by,string,"Name of the user who last updated the event in the vendor system.
+"
+,event_last_updated_date_time,string,Date and time the event was last updated in the vendor system.
+,curriculum_prc_code,string,PRC Code of the Curriculum used at the event.
+,curriculum_title,string,Title of the curriculum presented at the event.
+,presented_by,string,Speaker(s) presenting the curriculum at the event.
+,presentation_type,string,"Describes the presentation style of the event, example: Didactic vs Roundtable."
+,curriculum_audience,string,"The intended customer of the curriculum. Examples: Nurse, Pharmacist, Patient etc."
+,curriculum_language,string,Language in which the currciulum content is created and presented at the event.
+,curriculum_brand,string,"Identifies the product being discussed in the content of the curriculum.
+
+If the content of the curiculum discusses the disease states and/or mechanisms of action, or other non-product specific content, such as managed care and/or reimbursement related content Brand = no product discussed."
+,curriculum_brand_indication,string,"Identifies the indication(s) of the product being discussed in the content of the curriculum.
+
+If the content of the curiculum discusses the disease states and/or mechanisms of action, or other non-product specific content, such as managed care and/or reimbursement related content, then brand Indication = None."
+,requestor_vendor_id,string,Vendor's unique ID for the individual that requested the event.
+,requestor_name,string,The first and last name of the individual who requested the event.
+,requestor_unix_id,string,Genentech Unix ID of the individual who requested the event.
+,requestor_company,string,Name of the organization the individual who requested the event belongs to.
+,accountable_vendor_id,string,Vendor's unique ID for the individual accountable for the event.
+,accountable_name,string,The first and last name of the individual accountable for the event.
+,accountable_unix_id,string,Genentech Unix ID of the individual accountable for the event.
+,accountable_company,string,Name of the organization the individual accountable for the event belongs to.
+,accountable_position_number,string,Roster field position number of the individual accountable for the event.
+,accountable_primary_ecosystem,string,Ecosystem of the primary position of the individual accountable for the event.
+,coordinator_vendor_id,string,Vendor's unique ID for the individual executing logistics support for the event.
+,coordinator_name,string,The first and last name of the individual executing logistics support for the event.
+,coordinator_company,string,Name of the organization the individual executing logistics support for the event belongs to.
+,overall_sign_in_sheet_status,string,"Overall status of the sign-in sheet for the event. Possible statuses:
+
+- Missing: Logistics vendor has not received a sign-in sheet for the event.
+
+- Received: Logistics vendor has received a paper sign-in sheet and it is being evaluated for completeness and legibility.
+
+- Approved: Logistics vendor has received a paper sign-in sheet, it is deemed complete and legible, and is it in the process of being transcribed into the system.
+
+- Problem: Logistics vendor has received a paper sign-in sheet and one or more entries in the sign-in sheet are either incomplete or illegible.
+
+- Good: Sign-in sheets for the event exist with complete and legible information, all attendees have been reconciled and added to the event in the system.
+
+- Uncorrectable: The event has a meal, and the paper sign-in sheet is either incomplete, illegible, or missing altogether. Sign-in sheet escalation has not resolved the issue(s) and was deemed uncorrectable by Speaker Bureau Services.
+
+- Partial: A paper sign-in sheet exists, the event does not have a meal, not all information is available and not reasonably obtainable, and the event is either a Product Theater without meal or Virtual program without meal. 
+
+- Not Required: The sign-in sheet is not required for the event. Examples: Dropped events, Cancelled events without a consumed meal, etc.)
+
+If program is either yet to occur or has occured less than 2 business days ago, this field will be blank."
+,overall_sign_in_sheet_status_date_time,string,Date and time the overall sign-in sheet status was applied.
+,electronic_sign_in_sheet_status,string,Status of the electronic sign-in sheet for the event.
+,electronic_sign_in_sheet_status_date_time,string,Date and time the electronic sign-in sheet status was applied.
+,paper_sign_in_sheet_status,string,"Status of the paper sign-in sheet for the event. Possible statuses:
+
+- Missing: Logistics vendor has not received a sign-in sheet for the event.
+
+- Received: Logistics vendor has received a paper sign-in sheet and it is being evaluated for completeness and legibility.
+
+- Approved: Logistics vendor has received a paper sign-in sheet, it is deemed complete and legible, and is it in the process of being transcribed into the system.
+
+- Problem: Logistics vendor has received a paper sign-in sheet and one or more entries in the sign-in sheet are either incomplete or illegible.
+
+- Good: Sign-in sheets for the event exist with complete and legible information, all attendees have been reconciled and added to the event in the system.
+
+- Uncorrectable: The event has a meal, and the paper sign-in sheet is either incomplete, illegible, or missing altogether. Sign-in sheet escalation has not resolved the issue(s) and was deemed uncorrectable by Speaker Bureau Services.
+
+- Partial: A paper sign-in sheet exists, the event does not have a meal, not all information is available and not reasonably obtainable, and the event is either a Product Theater without meal or Virtual program without meal. 
+
+- Not Required: The sign-in sheet is not required for the event. Examples: Dropped events, Cancelled events without a consumed meal, etc.)
+
+If program is either yet to occur or has occured less than 2 business days ago, this field will be blank."
+,paper_sign_in_sheet_status_date_time,string,Date the paper sign-in sheet status was applied.
+,canceled_by_role,string,The user role responsible for cancelation of the event.
+,cancellation_date_time,string,Date and time when event was canceled.
+,cancellation_reason,string,The reason why event was canceled.
+,cancellation_explanation,string,Additional explanation (if available) for why an event was canceled.
+,setting_type,string,This describes if the site/venue where the event takes place is in an office or out of office or virtual
+,site_vendor_id,string,Unique ID assigned to the site/venue by the vendor system.
+,site_name,string,Name of the event site/venue.
+,site_address_line_1,string,Street address of the event site/venue.
+,site_address_line_2,string,"Additional address information of the event site/venue, example: Suite XYZ."
+,site_city,string,City of the event site/venue.
+,site_state,string,State or province of the event site/venue.
+,site_postal_code,string,Postal Code of the event site/venue.
+,site_country,string,Country of the event site/venue.
+,site_latitude,string,Latitude coordinate of the event site/venue.
+,site_longitude,string,Longitude coordinate of the event site/venue.
+,catering_provided,string,Identifies if a catering service was used at the event site/venue.
+,room_capacity,int,Number of people that can safely use the room for the event.
+,guaranteed_headcount,int,Number of people that are expected to attend the event and consume the meal provided by Genentech.
+,receipt_count,int,Number of meals paid by Genentech for the event (regardless of number of attendees).
+,contract_food_and_bev_min_rsvp,int,Minimum RSVPs required to meet the Food and Beverage mimimum for the event based on the site/caterer contract.
+,minimum_rsvp,int,Minimum number of RSVPs equired for the event to take place.
+,expense,string,"Spend category, examples: F&B, A/V, Vendor Fee."
+,estimate,double,The estimated $ amount of the expense.
+,actual,double,The actual $ amount of the expense.
+,event_brand,string,The product(s) for the bureau that the program is assigned.
+,business_type,string,Identifier to identify if the data is commercial or Medical
+,source_updated_date,string,
+,oasis_load_date,string,
+,vendor_name,string,Name of the Vendor sending the feed to Genentech.
+,,,
+,speaker_bureau_participants_daily,,
+,Attribute Name,Data Type,Description
+,affiliation,string,"The name of the organization the participant works for or is affiliated to, as provided for the event."
+,attendance,string,Attendance type of the participant for the event.
+,attendance_meal_consumption,string,Attendees meal consumption value.
+,attribute_identifier,string,"This identifies the heirarchy/level of the attribute and its association to the participant, i.e. is it a direct attribute of the participant or the participant's expense or cross-reference to the participant's record."
+,cell_phone,string,"Cell phone number of the event participant, as provided for the event."
+,credential,string,"Credentials of the event participant, as provided for the event."
+,did_not_benefit_flag,string,Identifies if there is no tranfer of value to the participant for an expense
+,email,string,"Email address of the event participant, as provided for the event."
+,email_invitation_sent_date_time,string,Date and time the individual is sent an invitation from the system.
+,email_opt_in_date_time,string,Date of participant marketing opt-in.
+,event_vendor_id,string,Unique ID of the event the participant is associated to.
+,first_name,string,First name of the event participant.
+,last_name,string,Last name of the event participant.
+,license_number,string,"License number for the state listed in the ""License State"" of the event participant.
+
+This will be blank for programs prior to 06/01/2023, when this field started being captured at registration."
+,license_state,string,"State of license of the participant as provided for the event.
+
+This will be blank for programs prior to 06/01/2023, when this field started being captured at registration."
+,middle_name,string,Middle name of the event participant.
+,no_npi_no_license,string,The participant indicated they do not have an NPI ID nor a state license.
+,npi,string,"NPI of the participant as provided for the event.
+
+This will be blank for programs prior to 06/01/2023, when this field started being captured at registration."
+,oasis_load_date,string,
+,paid_to_party_name,string,The name of the individual or entity that receives the Fee for the event.
+,paid_to_party_tax_id,string,"The tax ID of the entity of the received the payment of Fee. When the TAX ID is a social secutity number then this is sent as ""SSN""."
+,paid_to_party_type,string,Represents if the spend transaction was made to an Individual or to an Organization.
+,participant_added_by,string,"Person that added the participant to the program. 
+
+For self registrations, this will be Self.
+
+Event speakers and accountable are automatically added to the program, and will be listed as such."
+,participant_added_date_time,string,Date and time the individual is added to the event.
+,participant_address_line_1,string,Street address of the participant as provided for the event.
+,participant_address_line_2,string,"Additional address information of the participant, as provided for the event, example: Suite XYZ."
+,participant_city,string,City of the participant as provided for the event.
+,participant_contract_status,string,Identifies whether the participant was contracted or not with Genentech in relation to their participation in the event.
+,participant_country,string,Country of the participant as provided for the event.
+,participant_expense_actual,double,The actual $ amount of the expense.
+,participant_expense_category,string,
+,participant_expense_estimate,double,The estimated $ amount of the expense.
+,participant_postal_code,string,Postal code of the participant as provided for the event.
+,participant_role,string,"Role of the participant at the event, such as Speaker, Attendee, Genentech employee, Partner, etc."
+,participant_state,string,State or province of the participant as provided for the event.
+,participant_xref_source,string,
+,participant_xref_source_id,string,
+,profession,string,"Profession of the event participant, as provided for the event."
+,rsvp,string,Last set RSVP type of the participant for the event.
+,rsvp_date_time,string,Date and time when the RSVP value for the participant was last updated.
+,rsvp_meal_consumption,string,Last set RSVP meal consumption value for the participant.
+,source_updated_date,string,
+,specialty,string,"Specialization of the event participant, as provided for the event."
+,unix_id,string,Unix ID of the Genentech employee/Partner.
+,vendor_participant_address_id,string,"Unique vendor ID assigned to the participant's address, as provided for the event, in the vendor system."
+,vendor_participant_id,string,Vendor system ID assigned to the account of the participant.
+,vendor_participant_registration_id,string,Unique registration ID of the participant for the event.
+,vendor_name,string,Name of the Vendor sending the feed to Genentech.
+,,,
+,speaker_bureau_account_hcp_master_daily,,
+,Attribute Name,Data Type,Description
+,file_type,string,Denotes file processing type
+,record_type,string,Denotes record indication processing type
+,source_name,string,"NAME of source - A short code that identifies a system, company or legal entity which tracks data about Parties, and which assigns its own identifiers. Examples include CLNCLMND"
+,customer_id,string,Unique key of the customer account from the vendor - A non-intelligent ID assigned to uniquely identify an instance of an entity in a source system. The type of this entity is defined by the Canonical Entity Type Code
+,full_name,string,Full name from source
+,first_name,string,"First name from source - A name given to a person at birth, as distinguished from a family name/surname."
+,last_name,string,"Last name from source - A name shared in common to identify the members of a family, as distinguished from each member's given name. Also called family name, last name."
+,middle_name,string,"Middle name from source - Many people's names include one or more middle names, placed between the first given name and the surname. In the West, a middle name is effectively a second given name. In the Anglosphere there is usually only one middle name, often abbreviated by its possessor to the middle initial or omitted entirely in everyday use."
+,suffix_name,string,suffix name from source
+,status,string,Status of the account
+,gender,string,Gender
+,dob,string,Date of birth from source(YYYY-MM-DD)
+,professional_role_code,string,"A professional code for healthcare professionals (HCP) such as medical doctors, pharmacists, dentists, and others typically includes guidelines and principles designed to ensure ethical and competent practice"
+,professional_role_desc,string,"professional description for healthcare professionals (HCP) such as medical doctors, pharmacists, dentists, and others typically includes guidelines and principles designed to ensure ethical and competent practice"
+,phone,string,Phone number detail from source - The Communication Channel Type defines the different mediums by which Parties communicate with Genentech.
+,fax,string,Fax number detail from source
+,email,string,"Email from source - The value, such as a URL, e-mail address, phone number, etc. related to a specific instance of a Communication Channel"
+,,,
+,speaker_bureau_account_address_daily,,
+,Attribute Name,Data Type,Description
+,file_type,string,Denotes file processing type
+,record_type,string,Denotes record indication processing type
+,source_name,string,NAME of source
+,customer_id,string,Unique key from source
+,address_id,string,Unique key for address from source
+,address_line_1,string,"Address details from source - The actual street adress of a physical location. This includes any ""pre-direction"", (North, N, South S, East, West, etc), plus a street name, ""Main"", plus a street type, (""St., Ave., Blvd., Crt, Circle, etc.) plus any post-directions, NE, SE, and the like. 
+
+It does NOT include mail boxes, suites, floors,"
+,address_line_2,string,Additional Address details from source
+,city,string,City name from source
+,stateprovince,string,"State name from source - One of the constituent territorial units of a nation such as Canada or the United States. Examples: Ontario, California."
+,zip,string,"Postal code from source - A postal code (known in various countries as a post code, postcode, or ZIP code) is a series of letters and/or digits appended to a postal address for the purpose of sorting mail."
+,zip_cd_ext,string,Post code extension from source
+,country,string,"Country name from source - ""A country is a political division of a geographical entity, a sovereign territory, most commonly associated with the notions of state or nation and government. The term 'country' is sometimes used interchangeably with 'state' and 'nation', but this can lead to confustion. For example, the United Kingdom is an internationally recognized sovereign state which is also referred to as a country and whose inhabitants have a nationality referred to as 'British'. However, the UK also consists of areas including England and Scotland that are also sometimes referred to as 'countries'.
+Country Code will be based on a standard source such as ANSI.
+For purposes of this definition, examples of Country include Mexico, the United States, and the United Kingdom. England and Scotland do not meet this definition of 'country'."""
+,address_type,string,Type of address
+,addr_status,string,Status provided from source
+,dea_number,string,DEA Number only for HCPs
+,dea_expiration_date,string,DEA Expiration date for respective HCPs (YYYY-MM-DD)
+,phone,string,Phone number detail from source at address level
+,fax,string,"Fax number detail from source at address level - A short code that identifies a system, company or legal entity which tracks data about Parties, and which assigns its own identifiers. Examples include Verispan, DEA and AHA."
+,,,
+,speaker_bureau_account_child_attributes,,
+,Attribute Name,Data Type,Description
+,file_type,string,Denotes file processing type
+,record_type,string,Denotes record indication processing type
+,source_name,string,"NAME of source - A short code that identifies a system, company or legal entity which tracks data about Parties, and which assigns its own identifiers. Examples include LMHC"
+,customer_id,string,Unique key from source
+,category,string,Must have at least one Profession/Credential/Degree/Identifier
+,type,string,"Description of the category
+
+"
+,code,string,Code value given from source for the specific Category/Type
+,description,string,Description value given from source for the specific Category/Type
+,value_text,string,License or Identifier Value given from source for the specific Category/Type
+,state,string,"State of license where HCP is working, only for License record"
+,status,string,Status value
+,issue_date,string,(Format:) : (YYYY-MM-DD)
+,expiration_date,string,(Format:): (YYYY-MM-DD)
+,sample_eligibility,string,HCP is eligible for sampling
