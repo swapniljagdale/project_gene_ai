@@ -1,0 +1,6 @@
+address_id,address_line_1,address_line_2,city,state,postal_code,country,address_type,source_updated_date,oasis_load_date
+A1001,123 Medical Center Dr,Suite 200,San Francisco,CA,94158,USA,Primary Office,2025-07-05,2025-07-06
+A1002,456 Park Avenue,10th Floor,New York,NY,10022,USA,Primary Office,2025-07-05,2025-07-06
+A1003,789 Lake Shore Dr,,Chicago,IL,60611,USA,Primary Office,2025-07-05,2025-07-06
+A1004,1010 Main St,Building C,Houston,TX,77002,USA,Primary Office,2025-07-05,2025-07-06
+A1005,555 Ocean Blvd,Suite 300,Miami,FL,33139,USA,Primary Office,2025-07-05,2025-07-06
